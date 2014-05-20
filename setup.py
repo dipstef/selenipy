@@ -2,9 +2,9 @@ from distutils.core import setup
 
 VERSION = '0.1'
 
-desc = """l client implementation using selnium drivers."""
+desc = """Wrapper for selenium drivers using the interfaces defined in the httpy_client module"""
 
-name = 'httpy_client'
+name = 'selenipy'
 
 setup(name=name,
       version=VERSION,
@@ -12,7 +12,7 @@ setup(name=name,
       author_email='dipstef@github.com',
       url='http://github.com/dipstef/{}/'.format(name),
       description=desc,
-      packages = ['httpy.client.selenium'],
+      packages=['httpy.client.selenium'],
       requires=['selenium', 'httpy', 'httpy_client'],
       platforms=['Any']
 )
