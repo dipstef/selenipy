@@ -1,4 +1,4 @@
-httpy_selenium
+Selenipy
 ==============
 
 Wrapper for selenium drivers using the interfaces defined in the httpy_client module.
