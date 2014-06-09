@@ -5,8 +5,8 @@ from urlo import get_domain
 from httpy.request import HttpRequest
 from httpy.response import HttpResponse
 
-from httpy.client.requests import HttpRequests, cookie_jar
-from httpy.client import UrllibClient
+from httpy_client.requests import HttpRequests, cookie_jar
+from httpy_client import UrllibClient
 
 
 class SeleniumDriverGetPage(HttpRequests):
