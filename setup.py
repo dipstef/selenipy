@@ -12,7 +12,7 @@ setup(name=name,
       author_email='dipstef@github.com',
       url='http://github.com/dipstef/{}/'.format(name),
       description=desc,
-      packages=['httpy_client.selenium'],
+      packages=['selenipy'],
       requires=['selenium', 'httpy'],
       platforms=['Any']
 )
