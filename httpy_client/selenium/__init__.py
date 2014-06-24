@@ -1,5 +1,5 @@
 from selenium import webdriver
-from httpy_client.requests import user_agent
+from httpy.requests import user_agent
 
 from .requests import SeleniumDriverRequests
 

@@ -1,12 +1,12 @@
 import multiprocessing
 
-from urlo import get_domain
+from urlo.domain import get_domain
 
-from httpy.request import HttpRequest
-from httpy.response import HttpResponse
+from httpy.http.request import HttpRequest
+from httpy.http.response import HttpResponse
 
-from httpy_client.requests import HttpRequests, cookie_jar
-from httpy_client import UrllibClient
+from httpy.requests import HttpRequests, cookie_jar
+from httpy.client import http_client
 
 
 class SeleniumDriverGetPage(HttpRequests):
@@ -53,7 +53,7 @@ class SeleniumDriverRequests(SeleniumDriverGetPage):
 
     def __init__(self, driver, client=None):
         super(SeleniumDriverRequests, self).__init__(driver)
-        self._client = client or UrllibClient()
+        self._client = client or http_client
 
     def request(self, method, url, **kwargs):
         return self._request_and_update_cookies(method, url, **kwargs) if method != 'GET' else self._get(url)

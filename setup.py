@@ -13,6 +13,6 @@ setup(name=name,
       url='http://github.com/dipstef/{}/'.format(name),
       description=desc,
       packages=['httpy_client.selenium'],
-      requires=['selenium', 'httpy', 'httpy_client'],
+      requires=['selenium', 'httpy'],
       platforms=['Any']
 )

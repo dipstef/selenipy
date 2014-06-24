@@ -1,4 +1,4 @@
-from httpy_client.selenium import SeleniumFirefox
+from httpy.client.selenium import SeleniumFirefox
 
 
 def main():
