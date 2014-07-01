@@ -1,18 +1,44 @@
-from distutils.core import setup
+#!/usr/bin/env python
 
-VERSION = '0.1'
+import os
+import sys
 
-desc = """Wrapper for selenium drivers using the interfaces defined in the httpy_client module"""
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
-name = 'selenipy'
+# Publish Helper.
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit()
 
-setup(name=name,
-      version=VERSION,
-      author='Stefano Dipierro',
-      author_email='dipstef@github.com',
-      url='http://github.com/dipstef/{}/'.format(name),
-      description=desc,
-      packages=['selenipy'],
-      requires=['selenium', 'httpy'],
-      platforms=['Any']
+CLASSIFIERS = [
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'License :: OSI Approved :: Apache Software License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2.6',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.2',
+    'Topic :: Internet',
+    'Topic :: Utilities',
+]
+
+settings = dict(
+    name='selenipy',
+    version='0.1',
+    description='httpy wrapper for selenium',
+    long_description=open('README.rst').read(),
+    author='Stefano Dipierro',
+    license='Apache 2.0',
+    url='https://github.com/dipstef/selenipy',
+    classifiers=CLASSIFIERS,
+    keywords='http client selenium httpy',
+    packages=['selenipy'],
+    requires=['selenium', 'httpy'],
+    test_suite='tests'
 )
+
+
+setup(**settings)

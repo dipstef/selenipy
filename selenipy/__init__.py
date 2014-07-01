@@ -1,18 +1,18 @@
 from selenium import webdriver
-from httpy.requests import user_agent
+from httpy.client import user_agent
 
-from .requests import SeleniumDriverRequests
+from .requests import SeleniumDriver, HttpySeleniumUpdate
 
 
-class SeleniumFirefox(SeleniumDriverRequests):
-    def __init__(self, client=None):
-        super(SeleniumFirefox, self).__init__(webdriver.Firefox(), client)
+class Firefox(SeleniumDriver):
+    def __init__(self,):
+        super(Firefox, self).__init__(webdriver.Firefox())
 
 _phantom_js = dict(webdriver.DesiredCapabilities.PHANTOMJS)
 _phantom_js['phantomjs.page.settings.userAgent'] = user_agent
 
 
-class SeleniumPhantomJs(SeleniumDriverRequests):
-    def __init__(self, client=None):
+class PhantomJs(SeleniumDriver):
+    def __init__(self):
         driver = webdriver.PhantomJS(port=8910, desired_capabilities=_phantom_js)
-        super(SeleniumPhantomJs, self).__init__(driver, client)
+        super(PhantomJs, self).__init__(driver)

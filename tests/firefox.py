@@ -1,12 +1,10 @@
-from selenipy import SeleniumFirefox
+from selenipy import Firefox
 
 
 def main():
-    firefox = SeleniumFirefox()
-    response = firefox.request('GET', 'http://www.repubblica.it')
-    assert response.status == 200
-
-    firefox.close()
+    with Firefox() as firefox:
+        response = firefox.get('http://www.google.com')
+        assert response.status == 200
 
 if __name__ == '__main__':
     main()
