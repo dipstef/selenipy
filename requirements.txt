@@ -1,0 +1,2 @@
+selenium
+git+git://github.com/dipstef/httpy.git
